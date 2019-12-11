@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit and update business contacts:</title>
+        <meta charset="utf-8">
+        <meta name="viewport">
+        
+    </head>
+    <body>
+        <center>
+        <div class="cont">
+            <h2><u>Edit Business contact:</u> </h2>
+            <form action="/business/update" method="POST">
+            <input type="hidden" value="<% user.id %>" name="id">
+            <br/>
+            <label> Phone Number: </label>
+            <input type="text" value="<% user.phonenumber %>" name="phonenumber" required>
+            <br/>
+            <br/>
+            <label> Emails address: </label>
+            <input type="text" value="<% user.email %>" name="email" required>
+            <br/>
+            <br/>
+            <label> Physical Address: </label>
+            <input type="text" value="<% user.physicaladdress %>" name="physicaladdress" required>
+            <br/>
+            <br/>
+            <label> Postal address: </label>
+            <input type="text" value="<% user.postaladdress %>" name="postaladdress" required>
+            <br/>
+            <br/>
+            <label> VAT Number: </label>
+            <input type="text" value="<% user.vatnumber %>" name="vatnumber" required>
+
+
+            <button class="button button1" type="submit">Submit</button>
+            <br/>
+            <br/>
+            <a href="/businessall.html">Go back to see all the business contacts</a>
+            </form>
+        </div>
+    </center>
+    </body>
+    <script>
+    
+    </script>
+</html>

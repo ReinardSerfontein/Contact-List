@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit and update your personal contacts:</title>
+        <meta charset="utf-8">
+        <meta name="viewport">
+        
+    </head>
+    <body>
+        <center>
+        <div class="cont">
+            <h2><u>Edit Personal contact:</u> </h2>
+            <form action="/personal/update" method="POST">
+            <input type="hidden" value="<% user.id %>" name="id">
+            <br/>
+            <label> Phone Number: </label>
+            <input type="text" value="<% user.phonenumber %>" name="phonenumber" required>
+            <br/>
+            <br/>
+            <label> Emails address: </label>
+            <input type="text" value="<% user.email %>" name="email" required>
+            <br/>
+            <br/>
+            <label> Address: </label>
+            <input type="text" value="<% user.address %>" name="address" required>
+            <br/>
+            <br/>
+            <label> Birthday: </label>
+            <input type="text" value="<% user.birthday %>" name="birthday" required>
+            <br/>
+            <br/>
+
+            <button class="button button1" type="submit">Submit</button>
+            <br/>
+            <br/>
+            <a href="/personalall.html">Go back to see all the personal contacts</a>
+            </form>
+        </div>
+    </center>
+    </body>
+    <script>
+    
+    </script>
+</html>
