@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><u>Business contacts from database:</u></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+                table {
+                  font-family: arial, sans-serif;
+                  border-collapse: collapse;
+                  width: 100%;
+                }
+                
+                td, th {
+                  border: 1px solid #dddddd;
+                  text-align: left;
+                  padding: 8px;
+                }
+                
+                tr:nth-child(even) {
+                  background-color: #dddddd;
+                }
+        </style>
+
+    </head>
+<body>
+    <center>
+    <div class="cont">
+        
+        <h2><u>Business contacts from database:</u></h2>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>ID:</th>
+                    <th>PhoneNumber:</th>
+                    <th>Email Address:</th>
+                    <th>Physical Address:</th>
+                    <th>Postal Address:</th>
+                    <th>VAT Number:</th>
+                    <th>Editing contact:</th>
+                    <th>Deleting contact:</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <% personal.forEach(function(user){ %>
+                            <tr>
+                                <td> <%= user.id %></td>
+                                <td> <%= user.phonenumber %></td>
+                                <td> <%= user.email %> </td>
+                                <td> <%= user.physicaladdress %> </td>
+                                <td> <%= user.postaladdress %> </td>
+                                <td> <%= user.vatnumber %> </td>
+                                <td><a href="/business/edit/<%= user.id %> "onclick='myFunction1();'>Edit Contact</a></td>
+                                <td><a href="/business/delete/<%= user.id %> "onclick='myFunction();'>Delete Contact</a></td>
+                            </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+    
+    <br/>
+    <a href="/business.html">Go back to business contact details enter.</a>
+</center>
+
+<div style="text-align: right">
+        <p> If you want to log out:</p>
+        <a href="/login.html">Logout</a>
+    </div>
+</body>
+
+<script>
+
+
+        function myFunction1() {
+            var txt;
+            if (confirm("Are you sure you want to Edit/update this contact?")) {
+                txt = "You pressed OK!";
+            } else {
+                txt = "You pressed Cancel!";
+            }
+            document.getElementById("demo").innerHTML = txt;
+            }
+    
+    
+        function myFunction() {
+        var txt;
+        if (confirm("Are you sure you want to delete this contact?")) {
+            txt = "You pressed OK!";
+        } else {
+            txt = "You pressed Cancel!";
+        }
+        document.getElementById("demo").innerHTML = txt;
+        }
+    
+    </script>
+
+</html>

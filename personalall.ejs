@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Personal all contacts</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+                table {
+                  font-family: arial, sans-serif;
+                  border-collapse: collapse;
+                  width: 100%;
+                }
+                
+                td, th {
+                  border: 1px solid #dddddd;
+                  text-align: left;
+                  padding: 8px;
+                }
+                
+                tr:nth-child(even) {
+                  background-color: #dddddd;
+                }
+        </style>
+
+    </head>
+<body>
+    <center>
+    <div class="cont">
+        
+        <h2><u>Personal Contacts of the database.</u></h2>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>ID:</th>
+                    <th>PhoneNumber:</th>
+                    <th>Email Address:</th>
+                    <th>Home Address:</th>
+                    <th>Birth-day:</th>
+                    <th>Editing a contact:</th>
+                    <th>Deleting a contact:</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <% personal.forEach(function(user){ %>
+                            <tr>
+                                <td> <%= user.id %></td>
+                                <td> <%= user.phonenumber %></td>
+                                <td> <%= user.email %> </td>
+                                <td> <%= user.address %> </td>
+                                <td> <%= user.birthday %> </td>
+                                <td><a href="/personal/edit/<%= user.id %> " onclick='myFunction1();'>Edit Contact</a></td>
+                                <td><a href="/personal/delete/<%= user.id %> " onclick='myFunction();'>Delete Contact</a></td>
+                            </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </div>
+    
+    <br/>
+    <a href="/personal.html">Go back to personal contact details enter.</a>
+</center>
+</body>
+<div style="text-align: right">
+        <p> If you want to log out:</p>
+        <a href="/login.html">Logout</a>
+    </div>
+<script>
+
+
+    function myFunction1() {
+        var txt;
+        if (confirm("Are you sure you want to Edit/update this contact?")) {
+            txt = "You pressed OK!";
+        } else {
+            txt = "You pressed Cancel!";
+        }
+        document.getElementById("demo").innerHTML = txt;
+        }
+
+
+    function myFunction() {
+    var txt;
+    if (confirm("Are you sure you want to delete this contact?")) {
+        txt = "You pressed OK!";
+    } else {
+        txt = "You pressed Cancel!";
+    }
+    document.getElementById("demo").innerHTML = txt;
+    }
+
+</script>
+</html>
